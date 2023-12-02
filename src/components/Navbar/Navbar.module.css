@@ -5,8 +5,12 @@
     flex-wrap: wrap;
     font-weight: bold;
     background: var(--bg-color);
+    height:auto;
+    padding: 0 2px;
     position: sticky;
     top: 0;
+    z-index:20;
+    box-shadow: 0 4px 4px 0 #00000040;
 }
 
 .nav h1 {
@@ -16,8 +20,9 @@
 .nav__items {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 32px;
-    padding: 12px;
+    padding: 0 12px;
 }
 
 .nav__items li {
