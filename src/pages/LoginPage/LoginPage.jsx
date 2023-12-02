@@ -1,15 +1,26 @@
 import { useForm } from "react-hook-form";
 
 import css from "./LoginPage.module.css";
-
-import { loginRequest } from "../../api/request";
+import { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuhtProvider";
 
 const LoginPage = () => {
   const { register, handleSubmit } = useForm();
+  const { login, isAuth } = useAuth();
 
   const onSubmit = handleSubmit(async (data) => {
-    await loginRequest(data);
+    await login(data);
   });
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isAuth) {
+      navigate("/movies");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isAuth]);
 
   return (
     <div className={css.container}>
@@ -23,6 +34,7 @@ const LoginPage = () => {
           type="email"
           id="email"
           name="email"
+          required
           placeholder="Email"
           {...register("email")}
         />
@@ -35,6 +47,7 @@ const LoginPage = () => {
           type="password"
           id="password"
           name="password"
+          required
           placeholder="Password"
           {...register("password")}
           autoFocus
@@ -42,6 +55,11 @@ const LoginPage = () => {
 
         <button type="submit">Login</button>
       </form>
+
+      <div className={css.login__foo}>
+        <p>¿Aun no estas registrado?  <Link to="/"><button>Register</button></Link> </p>
+       
+      </div>
     </div>
   );
 };
