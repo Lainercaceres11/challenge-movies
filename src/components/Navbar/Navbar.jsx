@@ -12,7 +12,7 @@ export const Navbar = () => {
   return (
     <nav className={css.nav}>
       <Link to="/">
-        <h1>Home</h1>
+        <h1>OMDB API</h1>
       </Link>
       <ul className={css.nav__items}>
         {isAuth ? (
