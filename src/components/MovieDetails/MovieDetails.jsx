@@ -5,15 +5,16 @@ import axios from "axios";
 
 import css from "./MovieDetails.module.css";
 import { Loader } from "../Loader/Loader";
+import { RecomededMovie } from "../RecomendedMovie/RecomededMovie";
 
 const API_URL = "https://api.themoviedb.org/3";
 const API_KEY = "4f5f43495afcc67e9553f6c684a82f84";
 const URL_IMAGE = "https://image.tmdb.org/t/p/original";
 
 export const MovieDetails = () => {
-  // const [trailer, setTrailer] = useState(null);
   const [movie, setMovie] = useState({ title: "Loading Movies" });
   const [isLoading, setIsLoading] = useState(true);
+  const [moviesReccomended, setMoviesRecomended] = useState({});
   const [playing, setPlaying] = useState(false);
   const [trailer, setTrailer] = useState(null);
 
@@ -33,6 +34,24 @@ export const MovieDetails = () => {
     setIsLoading(false);
   };
 
+  useEffect(()=>{
+    recommendMovies()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+
+  const recommendMovies = async ()=>{
+    const {data} = await axios.get(`https://api.themoviedb.org/3/movie/${params.id}/recommendations?api_key=${API_KEY}`, {
+      params: {
+        api_key: API_KEY,
+      },
+    })
+
+    console.log("Recomendadas", data.results)
+
+    setMoviesRecomended(data.results)
+  }
+
   useEffect(() => {
     fetchMovie();
 
@@ -42,6 +61,7 @@ export const MovieDetails = () => {
   if (isLoading) {
     return <Loader />;
   }
+
 
   return (
     <>
@@ -102,6 +122,11 @@ export const MovieDetails = () => {
           <strong>Popularity</strong>: {movie.popularity}
         </p>
       </div>
+
+      <section>
+        <h2 className={css.recomended__title}>Recomendaciones</h2>
+        <RecomededMovie moviesList={moviesReccomended} />
+      </section>
 
       <footer className={css.button__movie}>
         <Link to={"/"}>

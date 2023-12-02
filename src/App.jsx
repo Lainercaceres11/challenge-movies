@@ -4,10 +4,12 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import HomePage from "./pages/HomePage/HomePage";
 import { MovieDetails } from "./components/MovieDetails/MovieDetails";
+import { Navbar } from "./components/Navbar/Navbar";
 
 const App = () => {
   return (
     <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
@@ -18,4 +20,4 @@ const App = () => {
   );
 };
 
-export default App
+export default App;

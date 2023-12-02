@@ -40,6 +40,11 @@
     gap: 20px;
 }
 
+
+.recomended__title{
+    font-size: 42px;
+    color: #A0CCF2;
+}
 @media (max-width: 768px) {
     .movie__info__container{
         flex-wrap: wrap;
