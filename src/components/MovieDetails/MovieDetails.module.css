@@ -1,0 +1,36 @@
+.movies__details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.movie__info__container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 12px;
+}
+
+.movie__description{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 18px;
+}
+
+.button__movie{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    padding: 12px;
+}
+
+@media (max-width: 768px) {
+    .movie__info__container{
+        flex-wrap: wrap;
+    }
+    
+}
