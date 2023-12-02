@@ -11,7 +11,7 @@ export const Navbar = () => {
   };
   return (
     <nav className={css.nav}>
-      <Link to="/">
+      <Link to="/movies">
         <h1>OMDB API</h1>
       </Link>
       <ul className={css.nav__items}>
