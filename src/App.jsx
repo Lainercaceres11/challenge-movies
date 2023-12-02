@@ -7,6 +7,7 @@ import { MovieDetails } from "./components/MovieDetails/MovieDetails";
 import { Navbar } from "./components/Navbar/Navbar";
 import { AuthProvider } from "./context/AuhtProvider";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
+import Error404 from "./components/Error404/Error404";
 
 const App = () => {
   return (
@@ -21,7 +22,9 @@ const App = () => {
             <Route path="/movies" element={<HomePage />}></Route>
             <Route path="/movie-details/:id" element={<MovieDetails />}></Route>
           </Route>
+          <Route path="*" element={<Error404 />}></Route>
         </Routes>
+      
       </BrowserRouter>
     </AuthProvider>
   );

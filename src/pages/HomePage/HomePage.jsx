@@ -37,12 +37,11 @@ const HomePage = () => {
   useEffect(() => {
     fetchMovies();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [])
 
   if (isLoading) {
     return <Loader />;
   }
-
   return (
     <div>
       <header>
