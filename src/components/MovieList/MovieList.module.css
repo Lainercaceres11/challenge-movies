@@ -17,3 +17,12 @@
 .movies img:hover {
   transform: scale(1.1);
 }
+.categories{
+  border: 3px soli yellow;
+}
+.categories p{
+  border: 3px solid red;
+  display: flex;
+  flex-direction: row;
+  
+}
