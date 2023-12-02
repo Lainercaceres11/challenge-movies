@@ -2,6 +2,7 @@
 .nav{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     font-weight: bold;
     background: var(--bg-color);
     position: sticky;
@@ -27,4 +28,8 @@ a{
     text-decoration: none;
     color: white;
     font-weight: bold;
+}
+.nav__items button{
+    background-color: #ffff;
+    color:var(--bg-color);
 }

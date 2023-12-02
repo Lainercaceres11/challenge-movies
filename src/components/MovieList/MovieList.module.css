@@ -1,20 +1,19 @@
-
-
-.movies{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    justify-content: center;
-    cursor: pointer;
+.movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
+  cursor: pointer;
+  margin-top:30px;
+  padding:30px;
 }
-
 
 .movies img {
-    border-radius: 12px;
-        -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.11);
-        -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.11);
-        box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.11);
+  border-radius: 12px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.11);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.11);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.11);
+  transition: all 0.3s ease-in;
 }
-.movies img:hover{
-    padding: 5px;
-    transition: all 2s;
+.movies img:hover {
+  transform: scale(1.1);
 }
