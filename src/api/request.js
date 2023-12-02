@@ -1,5 +1,5 @@
 
-const URL = "https://talentochoco.000webhostapp.com/";
+const URL = "https://talentochoco.000webhostapp.com";
 export const loginRequest = async (data) => {
   const res = await fetch(`${URL}`, {
     method: "POST",
