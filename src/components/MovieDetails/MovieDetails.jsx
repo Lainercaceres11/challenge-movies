@@ -102,8 +102,6 @@ export const MovieDetails = () => {
                       ) : (
                         "Sorry, no trailer available"
                       )}
-                      <h1>{movie.title}</h1>
-                      <p>{movie.overview}</p>
                     </div>
                   </div>
                 )}
