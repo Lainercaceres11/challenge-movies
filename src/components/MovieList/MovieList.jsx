@@ -11,7 +11,7 @@ export const MovieList = ({ movies = [] }) => {
     <div className={css.movies}>
       {movies.map((movie) => (
         <div
-          key={movie.imdbID}
+          key={movie.id}
           onClick={() => navigate(`/movie-details/${movie.id}`)}
         >
           <img src={`${URL_IMAGE + movie.poster_path}`} alt="" width="300" />

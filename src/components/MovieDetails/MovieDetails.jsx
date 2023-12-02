@@ -129,7 +129,7 @@ export const MovieDetails = () => {
       </section>
 
       <footer className={css.button__movie}>
-        <Link to={"/"}>
+        <Link to={"/movies"}>
           <button>Volver a las peliculas</button>
         </Link>
       </footer>

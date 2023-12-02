@@ -2,16 +2,24 @@ import { useForm } from "react-hook-form";
 
 import css from "./RegisterPage.module.css";
 
-import { registerRequest } from "../../api/request";
+import { useAuth } from "../../context/AuhtProvider";
+import { Link, useNavigate } from "react-router-dom";
 
 const RegisterPage = () => {
   const { register, handleSubmit } = useForm();
+  const { registerApp } = useAuth();
+  const navigate = useNavigate()
 
   const onSubmit = handleSubmit(async (data) => {
-    await registerRequest(data)
-      .then(() => console.log(data))
-      .catch((err) => console.log(err));
-  });
+    try {
+      await registerApp(data)
+    } catch (error) {
+      console.log(error)
+    }
+
+    navigate("/login");
+});
+
 
   return (
     <div className={css.container}>
@@ -26,6 +34,7 @@ const RegisterPage = () => {
           type="text"
           id="nombre"
           name="nombre"
+          required
           {...register("nombre")}
         />
 
@@ -33,11 +42,12 @@ const RegisterPage = () => {
           Email:
         </label>
         <input
-          placeholder="email"
+          placeholder="Email"
           className={css.input}
           type="email"
           id="correo"
           name="correo"
+          required
           {...register("correo")}
         />
 
@@ -45,17 +55,22 @@ const RegisterPage = () => {
           Password:
         </label>
         <input
-          placeholder="password"
+          placeholder="Password"
           className={css.input}
           type="password"
           id="contrasena"
           name="contrasena"
+          required
           {...register("contrasena")}
           autoFocus
         />
 
         <button type="submit">Register</button>
       </form>
+
+      <div className={css.login__foo}>
+        <p>Ya estas registrado?  <Link to="/login"><button>Login</button></Link> </p>
+      </div>
     </div>
   );
 };

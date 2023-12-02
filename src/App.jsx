@@ -5,18 +5,25 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import HomePage from "./pages/HomePage/HomePage";
 import { MovieDetails } from "./components/MovieDetails/MovieDetails";
 import { Navbar } from "./components/Navbar/Navbar";
+import { AuthProvider } from "./context/AuhtProvider";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />}></Route>
-        <Route path="/login" element={<LoginPage />}></Route>
-        <Route path="/register" element={<RegisterPage />}></Route>
-        <Route path="/movie-details/:id" element={<MovieDetails />}></Route>
-      </Routes>
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<RegisterPage />}></Route>
+          <Route path="/login" element={<LoginPage />}></Route>
+
+          <Route element={<ProtectedRoute />}>
+            <Route path="/movies" element={<HomePage />}></Route>
+            <Route path="/movie-details/:id" element={<MovieDetails />}></Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   );
 };
 

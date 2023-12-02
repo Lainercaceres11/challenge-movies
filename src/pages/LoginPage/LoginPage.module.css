@@ -34,3 +34,9 @@ button {
     border: none;
     cursor: pointer;
 }
+
+.login__foo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

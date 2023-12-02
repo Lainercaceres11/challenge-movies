@@ -23,3 +23,15 @@ export const registerRequest = async (data) => {
 
   return registerData;
 };
+
+export const logoutRequest = async (token) => {
+  const res = await fetch(`${URL}/logout.php`, {
+    method: "POST",
+    body: JSON.stringify(token),
+  });
+  const registerData = await res.json();
+
+  console.log(registerData);
+
+  return registerData;
+};
