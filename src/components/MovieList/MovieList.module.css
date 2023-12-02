@@ -17,12 +17,14 @@
 .movies img:hover {
   transform: scale(1.1);
 }
-.categories{
-  border: 3px soli yellow;
-}
-.categories p{
-  border: 3px solid red;
-  display: flex;
-  flex-direction: row;
+@media (max-width: 768px) {
+  .movies {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-content: center;
+    cursor: pointer;
+    margin-top:30px;
+    padding:20px;
+  }
   
 }

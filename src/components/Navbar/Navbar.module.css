@@ -38,3 +38,9 @@ a{
     background-color: #ffff;
     color:var(--bg-color);
 }
+
+@media (max-width: 768px) {
+input{
+    width:50%;
+} 
+  }
