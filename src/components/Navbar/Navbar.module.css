@@ -1,0 +1,30 @@
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    background: var(--bg-color);
+    position: sticky;
+    top: 0;
+}
+
+.nav h1 {
+    padding: 0 12px;
+}
+
+.nav__items {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    padding: 12px;
+}
+
+.nav__items li {
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}

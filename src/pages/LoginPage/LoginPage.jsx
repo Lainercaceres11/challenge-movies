@@ -2,13 +2,14 @@ import { useForm } from "react-hook-form";
 
 import css from "./LoginPage.module.css";
 
-import { loginRequest } from "../../api/request";
+import { useAuthContext } from "../../context/AuhtProvider";
 
 const LoginPage = () => {
+  const {isLogged} = useAuthContext()
   const { register, handleSubmit } = useForm();
 
   const onSubmit = handleSubmit(async (data) => {
-    await loginRequest(data);
+    await isLogged(data)
   });
 
   return (
