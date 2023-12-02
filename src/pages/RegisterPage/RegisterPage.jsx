@@ -21,12 +21,12 @@ const RegisterPage = () => {
           Username:
         </label>
         <input
-          placeholder="Username"
+          placeholder="Nombre"
           className={css.input}
           type="text"
-          id="name"
-          name="name"
-          {...register("name")}
+          id="nombre"
+          name="nombre"
+          {...register("nombre")}
         />
 
         <label htmlFor="email" className={css.label}>
@@ -36,9 +36,9 @@ const RegisterPage = () => {
           placeholder="email"
           className={css.input}
           type="email"
-          id="email"
-          name="email"
-          {...register("email")}
+          id="correo"
+          name="correo"
+          {...register("correo")}
         />
 
         <label className={css.label} htmlFor="password">
@@ -48,9 +48,9 @@ const RegisterPage = () => {
           placeholder="password"
           className={css.input}
           type="password"
-          id="password"
-          name="password"
-          {...register("password")}
+          id="contrasena"
+          name="contrasena"
+          {...register("contrasena")}
           autoFocus
         />
 
