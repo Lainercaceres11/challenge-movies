@@ -1,6 +1,10 @@
+/* eslint-disable react/prop-types */
 import { useNavigate } from "react-router-dom";
 import css from "./MovieList.module.css";
 // eslint-disable-next-line react/prop-types
+
+const URL_IMAGE = "https://image.tmdb.org/t/p/original";
+
 export const MovieList = ({ movies = [] }) => {
   const navigate = useNavigate();
   return (
@@ -8,11 +12,12 @@ export const MovieList = ({ movies = [] }) => {
       {movies.map((movie) => (
         <div
           key={movie.imdbID}
-          onClick={() => navigate(`/movie-details/${movie.imdbID}`)}
+          onClick={() => navigate(`/movie-details/${movie.id}`)}
         >
-          <img src={movie.Poster} alt={movie.Poster} />
-          <p>{movie.Year}</p>
-          <p>{movie.Title}</p>
+          <img src={`${URL_IMAGE + movie.poster_path}`} alt="" width="300" />
+
+          <h4 className="text-center">{movie.title}</h4>
+          <p>{movie.release_date}</p>
         </div>
       ))}
     </div>
