@@ -13,7 +13,7 @@ export const Navbar = () => {
         </li>
         <li>UserName</li>
         <li>
-          <button>Logout</button>
+          <button className={css.nav__button}>Logout</button>
         </li>
       </ul>
     </nav>

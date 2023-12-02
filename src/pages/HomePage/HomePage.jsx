@@ -56,7 +56,7 @@ const HomePage = () => {
             type="text"
             placeholder="Star warz, Matrix"
           />
-          <button type="submit">Buscar</button>
+          <button className="button" type="submit">Buscar</button>
         </form>
       </header>
 
