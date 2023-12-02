@@ -40,7 +40,7 @@ const HomePage = () => {
     <div>
       <header>
         <h1 style={{ textAlign: "center" }}>
-          Buscador tus mejores peliculas 🎬{" "}
+          Buscador de tus mejores peliculas 🎬{" "}
         </h1>
         <form className="form" onSubmit={handleSubmit}>
           <input

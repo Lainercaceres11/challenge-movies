@@ -6,7 +6,10 @@ export const MovieList = ({ movies = [] }) => {
   return (
     <div className={css.movies}>
       {movies.map((movie) => (
-        <div key={movie.imdbID} onClick={()=> navigate(`/movie-details/${movie.imdbID}`)}>
+        <div
+          key={movie.imdbID}
+          onClick={() => navigate(`/movie-details/${movie.imdbID}`)}
+        >
           <img src={movie.Poster} alt={movie.Poster} />
           <p>{movie.Year}</p>
           <p>{movie.Title}</p>
