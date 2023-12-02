@@ -1,7 +1,7 @@
 
-const URL = "http://localhost/api/login";
+const URL = "https://talentochoco.000webhostapp.com/";
 export const loginRequest = async (data) => {
-  const res = await fetch(`${URL}/login.php`, {
+  const res = await fetch(`${URL}`, {
     method: "POST",
     body: JSON.stringify(data),
   });
