@@ -1,14 +1,20 @@
 .container {
+    width: 60%;
+    max-width: 400px; /* Updated max-width for responsiveness */
+    margin: 0 auto;
+    padding: 20px;
     border: 1px solid #ccc;
-    overflow: hidden;
-    overflow: hidden;
-    width: 60%; 
-    margin: 0 auto; 
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Added box-sizing */
+    margin-top: 60px;
 }
+
 
 .title {
     text-align: center;
     margin-bottom: 20px;
+    color: white;
 }
 
 .form {
@@ -41,17 +47,4 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-@media (max-width: 768px) {
-    input {
-        width: 100%; /* Ajustar el ancho al 100% en pantallas pequeñas */
-    }
-    .container {
-        border: 1px solid #ccc;
-        overflow: hidden;
-        overflow: hidden;
-        width: 80%; 
-        margin: 0 auto; 
-    }
 }

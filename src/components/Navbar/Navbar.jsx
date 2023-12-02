@@ -28,20 +28,7 @@ export const Navbar = () => {
             </li>
           </>
         ) : (
-          <>
-            <li>
-              <Link to="/login">
-                {" "}
-                <button className={css.nav__button}>Login</button>
-              </Link>
-            </li>
-            <li>
-              <Link to="/">
-                {" "}
-                <button className={css.nav__button}>Register</button>
-              </Link>
-            </li>
-          </>
+         null
         )}
       </ul>
     </nav>
